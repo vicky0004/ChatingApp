@@ -1,7 +1,7 @@
 import React from "react";
 import Search from "./Search";
 import Users from "./Users";
-import Logout from "./logout";
+import Logout from "./Logout.jsx";
 
 export default function left() {
   return (
