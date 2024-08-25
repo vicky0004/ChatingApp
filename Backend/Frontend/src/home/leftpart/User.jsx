@@ -1,6 +1,6 @@
 import React from 'react'
 import useConversation from "../../zustand/userConversation.js"
-import { useSocketContext } from '../../context/socketContext.jsx';
+import { useSocketContext } from '../../context/SocketContext.jsx';
 
 export default function User({user}) {
   const {selectedConversation,setSelectedConversation}=useConversation();
