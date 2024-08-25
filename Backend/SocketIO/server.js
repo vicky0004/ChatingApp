@@ -7,7 +7,7 @@ const server = http.createServer(app);
 
 const io = new Server(server,{
     cors:{
-        origin:"https://chatingapp-wsyc.onrender.com",
+        origin:"http://localhost:3002",
         methods:["GET","POST"],
     }
 })
@@ -24,7 +24,7 @@ io.on("connection",(socket)=>{
     const userId =socket.handshake.query.userId;
     if(userId){
         users[userId]=socket.id;
-        console.log("hello ",users);
+        // console.log("hello ",users);
     }
     //use to send the event to all connected users
     io.emit("getOnlineUsers",Object.keys(users));

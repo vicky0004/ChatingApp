@@ -12,7 +12,7 @@ export const SocketProvider = ({children})=>{
     const [authUser]=useAuth();
     useEffect(()=>{
         if(authUser){
-            const socket = io("https://chatingapp-wsyc.onrender.com",{
+            const socket = io("http://localhost:3000",{
                 query:{
                     userId:authUser.user._id,
                 },
