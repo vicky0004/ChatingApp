@@ -10,10 +10,10 @@ const useGetSocketMessage=()=> {
     useEffect(()=>{
         socket.on("newMessage",(newMessage)=>{
             if(selectedConversation._id === newMessage.senderId.toString()){
-                const notification = new Audio(sound2);
-                notification.play();
                 setMessage([...messages,newMessage]);
             }else{
+                const notification = new Audio(sound);
+                notification.play();
                 setNotification(newMessage);
               }
         });
