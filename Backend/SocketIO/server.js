@@ -7,7 +7,7 @@ const server = http.createServer(app);
 
 const io = new Server(server,{
     cors:{
-        // origin:"http://localhost:3000", // for local host
+        // origin:"http://localhost:3000", // for local host 
         origin:"https://chatingapp-wsyc.onrender.com/",  // for online
         methods:["GET","POST"],
     }
