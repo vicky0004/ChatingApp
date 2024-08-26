@@ -13,7 +13,9 @@ const useGetSocketMessage=()=> {
                 const notification = new Audio(sound2);
                 notification.play();
                 setMessage([...messages,newMessage]);
-            }
+            }else{
+                setNotification(newMessage);
+              }
         });
         return ()=>{
             socket.off("newMessage");
