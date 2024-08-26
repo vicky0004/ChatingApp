@@ -6,10 +6,10 @@ import sound2 from "../assets/chin_tapak_dum_dum.mp3"
 
 const useGetSocketMessage=()=> {
     const {socket}=useSocketContext();
-    const {selectedConversation,messages,setMessage}=useConversation();
+    const {setNotification,selectedConversation,messages,setMessage}=useConversation();
     useEffect(()=>{
         socket.on("newMessage",(newMessage)=>{
-            if(selectedConversation._id === newMessage.senderId.toString()){
+            if(selectedConversation?._id === newMessage.senderId.toString()){
                 setMessage([...messages,newMessage]);
             }else{
                 const notification = new Audio(sound);
