@@ -2,6 +2,7 @@ import React from "react";
 import useConversation from "../../zustand/userConversation";
 import { useSocketContext } from "../../context/SocketContext.jsx";
 import { CiMenuFries } from "react-icons/ci";
+import userImage from '../../assets/anime.jpg';
 
 export default function Chatuser() {
   const {selectedConversation} =useConversation();
@@ -10,17 +11,6 @@ export default function Chatuser() {
     return onlineUsers.includes(userId)?"online":"offline";
   }
   return (
-    // <div className="flex space-x-3 items-center justify-center h-[8vh] bg-gray-800 hover:bg-gray-700 duration-300"> 
-    //   <div className="avatar online">
-    //     <div className="w-14 rounded-full">
-    //       <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
-    //     </div>
-    //   </div>
-    //   <div className="">
-    //     <h1 className="text-xl">{selectedConversation.fullname}</h1>
-    //     <span className="text-sm">{getOnlineUsersStatus(selectedConversation._id)}</span>
-    //   </div>
-    // </div>
     <div className="relative flex items-center h-[8%] justify-center gap-4 bg-slate-800 hover:bg-slate-700 duration-300 rounded-md">
       <label
         htmlFor="my-drawer-2"
@@ -31,7 +21,7 @@ export default function Chatuser() {
       <div className="flex space-x-3 items-center justify-center h-[8vh] bg-gray-800 hover:bg-gray-700 duration-300">
         <div className={`avatar ${getOnlineUsersStatus(selectedConversation._id)}`}>
           <div className="w-12 rounded-full">
-            <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+            <img src={userImage} />
           </div>
         </div>
         <div>
